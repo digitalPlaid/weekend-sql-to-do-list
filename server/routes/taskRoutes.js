@@ -5,7 +5,7 @@ const router = new express.Router();
 // GET
 router.get('/', (req, res) => {
     let sqlQuery = `
-        SELECT * FROM "task"
+        SELECT * FROM "task" ORDER BY "id";
         `;
     pool.query(sqlQuery).then((dbResponse) => {
         console.log('successfully got tasks');
@@ -37,6 +37,26 @@ router.post('/', (req, res) => {
     })
 })
 // PUT
+router.put('/:id', (req, res) => {
+    console.log('taking a put action');
+    // add query 
+    let id = req.params.id;
+    let date = Date.now();
+    let sqlQuery = `
+        UPDATE "task"
+        SET "complete" = true, "date_completed" = to_timestamp(${date}/1000)
+        WHERE "id" = $1
+        `; // found the to_timestamp expression on a stack overflow. seems to work.
+    pool.query(sqlQuery, [id]).then((dbResponse) => {
+        console.log('successfully put data to server.');
+        res.sendStatus(204);
+    }).catch(error => {
+        console.log('error putting data to db: ', error);
+        res.sendStatus(500);
+    })
+})
+
+
 
 // DELETE
 
