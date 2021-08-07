@@ -11,11 +11,26 @@ function onReady() {
 function addListeners() {
     $('#createTaskBtn').on('click', createTask);
     $('#taskOut').on('click', '.complete', completeTask);
+    $('#taskOut').on('click', '.delete', deleteTask);
 };
+
+function deleteTask() {
+    console.log('in delete task');
+    let id = $(this).closest('tr').data('id');
+    $.ajax({
+        method: 'DELETE',
+        url: `/task/${id}`
+    }).then((response) => {
+        getTasks();
+    }).catch((error) => {
+        console.log('Delete request failed.', error);
+        alert('Delete request failed. See console for details.');
+    })
+
+}
 
 function completeTask() {
     let row = $(this).closest('tr');
-    console.log(row);
     // grab id from button
     let id = row.data('id');
     console.log('id we are trying to put: ', id);
