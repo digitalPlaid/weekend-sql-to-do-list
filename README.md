@@ -9,15 +9,15 @@ Your project description goes here. What problem did you solve? How did you solv
 Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
 
 # TO DO - by process
-[] Create a task
+[x] Create a task
     [x] client - add form on html page w/ button
     [x] client - wire button on front end - ajax post
     [x] server - wire button on back end - app.post call to DB
-    [] client - get list of tasks
-[] Get list of tasks
-    [] client - ajax get call
-    [] server - request db to send info
-    [] client - display to dom
+    [x] client - get list of tasks
+[x] Get list of tasks
+    [x] client - ajax get call
+    [x] server - request db to send info
+    [x] client - display to dom
 [] display to dom
     [] client - info passed to it is list of tasks to append
     [] client - it appends the info w/ classes, etc. that we will need
