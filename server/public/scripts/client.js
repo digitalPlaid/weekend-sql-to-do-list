@@ -34,25 +34,25 @@ function createTask() {
 
 function getTasks() {
     // get tasks
-    let tasks = [];
     $.ajax({
         method: 'GET',
         url: '/task'
     }).then((response) => {
-        tasks = response // .body?
         console.log(response);
         console.log('successfully GET');
+        displayTasks(response);
     }).catch((error) => {
         console.log('Failed to get: ', error);
         alert('Failed to retrieve tasks. See console for error.')
     })
     // displaygit status
     
-    displayTasks(tasks);
 }
 
 function displayTasks(tasks) {
-    let outputArea = $('#taskout');
+    console.log('in displayTasks');
+    console.log(tasks);
+    let outputArea = $('#taskOut');
     outputArea.empty()
     for (element of tasks) {
         outputArea.append(`
