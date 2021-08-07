@@ -3,6 +3,19 @@ const express = require('express');
 const router = new express.Router();
 
 // GET
+router.get('/', (req, res) => {
+    let sqlQuery = `
+        SELECT * FROM "task"
+        `;
+    pool.query(sqlQuery).then((dbResponse) => {
+        console.log('successfully got tasks');
+        res.send(dbResponse.rows);
+    }).catch((error) => {
+        console.log('failed to get tasks from db');
+        res.sendStatus(500);
+    })
+})
+
 
 // POST
 router.post('/', (req, res) => {
