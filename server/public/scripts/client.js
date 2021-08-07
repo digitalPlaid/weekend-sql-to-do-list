@@ -9,7 +9,29 @@ function onReady() {
 }
 
 function addListeners() {
-    $('#createTaskBtn').on('click', createTask)
+    $('#createTaskBtn').on('click', createTask);
+    $('#taskOut').on('click', '.complete', completeTask);
+};
+
+function completeTask() {
+    // grab id from button
+    let id = $(this).closest('tr').data('id');
+    // send ajax w/ the id on the url
+    $.ajax({
+        method: 'PUT',
+        url: `/task/${id}`,
+    }).then(response => {
+        console.log('Successfully updated data.');
+        // apply css change of style
+        getTasks(); // redisplay so that the new date shows up.
+    }).catch(error => {
+        console.log('Failed to put data: ', error);
+        alert('Failed to put. See console for details.')
+    })
+        // if successful
+        // apply css class to change style
+        // add completion date ( do on client or server side? )
+
 };
 
 function createTask() {
@@ -38,15 +60,12 @@ function getTasks() {
         method: 'GET',
         url: '/task'
     }).then((response) => {
-        console.log(response);
         console.log('successfully GET');
         displayTasks(response);
     }).catch((error) => {
         console.log('Failed to get: ', error);
         alert('Failed to retrieve tasks. See console for error.')
     })
-    // displaygit status
-    
 }
 
 function displayTasks(tasks) {
@@ -55,12 +74,13 @@ function displayTasks(tasks) {
     let outputArea = $('#taskOut');
     outputArea.empty()
     for (element of tasks) {
+        let completeBtn = element.complete ? '' : `<button class="complete">Complete</button>`;
         outputArea.append(`
         <tr data-id="${element.id}" data-complete="${element.date_completed}">
             <td>${element.task}</td>
-            <td><button class=".complete">Complete</button>
+            <td>${completeBtn}</td>
             <td>${element.date_completed}</td>
-            <td><button class=".delete">Delete</button></td>
+            <td><button class="delete">Delete</button></td>
         </tr>
         `)
     }
