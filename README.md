@@ -24,8 +24,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     [x] client - complete button for each
     [x] client - delete button for each
 [] wire up complete button
-    [] client - set up listener that makes ajax call
-    [] server - pings data base to change this, also sets date completed and displays 
+    [x] client - set up listener that makes ajax call
+    [x] server - pings data base to change this, also sets date completed and displays 
     [] client - upon success change the visual representation (line thru?) add a class
 [] wire up the delete button
     [] client - delete ajax call

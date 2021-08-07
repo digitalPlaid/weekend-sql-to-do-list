@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
     })
 })
 
-
 // POST
 router.post('/', (req, res) => {
     console.log('server for post');
@@ -36,12 +35,14 @@ router.post('/', (req, res) => {
         res.sendStatus(500);
     })
 })
+
 // PUT
 router.put('/:id', (req, res) => {
     console.log('taking a put action');
     // add query 
     let id = req.params.id;
     let date = Date.now();
+    console.log('id of put is: ', id);
     let sqlQuery = `
         UPDATE "task"
         SET "complete" = true, "date_completed" = to_timestamp(${date}/1000)
