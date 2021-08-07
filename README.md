@@ -11,7 +11,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 # TO DO - by process
 [] Create a task
     [x] client - add form on html page w/ button
-    [] client - wire button on front end - ajax post
+    [x] client - wire button on front end - ajax post
     [] server - wire button on back end - app.post call to DB
     [] client - get list of tasks
 [] Get list of tasks
