@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
     })
 })
 
-
 // POST
 router.post('/', (req, res) => {
     console.log('server for post');
@@ -36,6 +35,7 @@ router.post('/', (req, res) => {
         res.sendStatus(500);
     })
 })
+
 // PUT
 router.put('/:id', (req, res) => {
     console.log('taking a put action');

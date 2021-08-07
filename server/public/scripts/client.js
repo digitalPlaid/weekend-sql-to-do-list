@@ -14,15 +14,15 @@ function addListeners() {
 };
 
 function completeTask() {
+    let row = $(this).closest('tr');
     // grab id from button
-    let id = $(this).closest('tr').data('id');
+    let id = row.data('id');
     // send ajax w/ the id on the url
     $.ajax({
         method: 'PUT',
         url: `/task/${id}`,
     }).then(response => {
         console.log('Successfully updated data.');
-        // apply css change of style
         getTasks(); // redisplay so that the new date shows up.
     }).catch(error => {
         console.log('Failed to put data: ', error);
@@ -75,8 +75,9 @@ function displayTasks(tasks) {
     outputArea.empty()
     for (element of tasks) {
         let completeBtn = element.complete ? '' : `<button class="complete">Complete</button>`;
+        let strikeout = element.complete ? 'strikeout' : '';
         outputArea.append(`
-        <tr data-id="${element.id}" data-complete="${element.date_completed}">
+        <tr class="${strikeout}" "data-id="${element.id}" data-complete="${element.date_completed}">
             <td>${element.task}</td>
             <td>${completeBtn}</td>
             <td>${element.date_completed}</td>
