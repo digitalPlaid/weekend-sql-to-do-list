@@ -57,10 +57,22 @@ router.put('/:id', (req, res) => {
     })
 })
 
-
-
 // DELETE
-
+router.delete('/:id', (req, res) => {
+    console.log('in delete');
+    let id = req.params.id;
+    let sqlQuery = `
+    DELETE FROM "task"
+    WHERE "id" = $1
+        `;
+    pool.query(sqlQuery, [id]).then((dbRes) => {
+        console.log('delete succeeded');
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('delete from db failed: ', error);
+        res.sendStatus(500);
+    })
+})
 
 
 
