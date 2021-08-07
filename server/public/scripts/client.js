@@ -58,7 +58,9 @@ function displayTasks(tasks) {
         outputArea.append(`
         <tr data-id="${element.id}" data-complete="${element.date_completed}">
             <td>${element.task}</td>
+            <td><button class=".complete">Complete</button>
             <td>${element.date_completed}</td>
+            <td><button class=".delete">Delete</button></td>
         </tr>
         `)
     }
