@@ -19,8 +19,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     [x] server - request db to send info
     [x] client - display to dom
 [] display to dom
-    [] client - info passed to it is list of tasks to append
-    [] client - it appends the info w/ classes, etc. that we will need
+    [x] client - info passed to it is list of tasks to append
+    [x] client - it appends the info w/ classes, etc. that we will need
     [] client - complete button for each
     [] client - delete button for each
 [] wire up complete button
