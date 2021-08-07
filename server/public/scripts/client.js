@@ -1,22 +1,27 @@
 $(document).ready(onReady);
 
-
+let id = 0;
 function onReady() {
     // add event listeners
     addListeners();
-    // displa initial task list
+    // display initial task list
     getTasks();
 }
 
 function addListeners() {
     $('#createTaskBtn').on('click', createTask);
     $('#taskOut').on('click', '.complete', completeTask);
-    $('#taskOut').on('click', '.delete', deleteTask);
+    $('#taskOut').on('click', '.collectID', collectID);
+    $(document).on('click','.delete', deleteTask);
 };
 
+function collectID() {
+    id = $(this).closest('tr').data('id')
+}
+
 function deleteTask() {
+    // attach it to the modal, rather than the delete button (so that delete just launches the modal which contains the real delete button)
     console.log('in delete task');
-    let id = $(this).closest('tr').data('id');
     $.ajax({
         method: 'DELETE',
         url: `/task/${id}`
@@ -83,7 +88,7 @@ function getTasks() {
         console.log('Failed to get: ', error);
         alert('Failed to retrieve tasks. See console for error.')
     })
-}
+};
 
 function displayTasks(tasks) {
     console.log('in displayTasks');
@@ -91,15 +96,17 @@ function displayTasks(tasks) {
     let outputArea = $('#taskOut');
     outputArea.empty()
     for (element of tasks) {
-        let completeBtn = element.complete ? '' : `<button class="complete">Complete</button>`;
+        // decide what we'll inject into the html
+        let completeBtn = element.complete ? '' : `<button class="complete btn btn-success">Complete</button>`;
         let strikeout = element.complete ? 'strikeout' : '';
         let date = element.date_completed === null ? '' : element.date_completed;
+        // append the appropriate info
         outputArea.append(`
         <tr class="${strikeout}" data-id="${element.id}" data-complete="${element.date_completed}">
             <td>${completeBtn}</td>
             <td class="strike-able">${element.task}</td>
             <td >${date}</td>
-            <td><button class="delete">Delete</button></td>
+            <td><button class="collectID btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button></td>
         </tr>
         `)
     }

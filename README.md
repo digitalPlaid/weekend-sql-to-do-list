@@ -44,14 +44,16 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     [] font family and size
     [] text color and/or background color of tasks to show completed vs not
     [] add bootstrap 
-        [] make creation buttons green
-        [] make deletion buttons red
-        [] make inputs in the bootstrap way
-        [] make the page responsive to different layouts - bootstrap docs per the instructions
-[] client - confirm delete when deleting
-    [] see bootstrap docs per the instructions
+        [x] make creation buttons green
+        [x] make deletion buttons red
+        [x] make inputs in the bootstrap way
+        [] make the page responsive to different layouts - bootstrap docs per the instructions (and make width of task input to be not 100%)
+    [] make the table be static in its shape - it shouldn't change every time the task input changes
+    [] make presentation of dates prettier. just give the date w/ slashes or dashes
+    [] put title in jumbotron or something
+[x] client - confirm delete when deleting
+    [x] see bootstrap docs per the instructions
 [] ordering task query
     [] option to reverse the order tasks display in
     [] see instructions for detail
-[] record when a task was completed
-    [] add feature to frontend in nice format
+[x] record when a task was completed
