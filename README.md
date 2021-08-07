@@ -25,7 +25,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     [] client - delete button for each
 [] wire up complete button
     [] client - set up listener that makes ajax call
-    [] server - pings data base to change this
+    [] server - pings data base to change this, also sets date completed and displays 
     [] client - upon success change the visual representation (line thru?) add a class
 [] wire up the delete button
     [] client - delete ajax call
@@ -38,8 +38,20 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
         [] create table with following headings:
             [] complete
             [] task
+            [] date_completed
 [] client - styling
     [] change background color
     [] font family and size
     [] text color and/or background color of tasks to show completed vs not
-
+    [] add bootstrap 
+        [] make creation buttons green
+        [] make deletion buttons red
+        [] make inputs in the bootstrap way
+        [] make the page responsive to different layouts - bootstrap docs per the instructions
+[] client - confirm delete when deleting
+    [] see bootstrap docs per the instructions
+[] ordering task query
+    [] option to reverse the order tasks display in
+    [] see instructions for detail
+[] record when a task was completed
+    [] add feature to frontend in nice format
