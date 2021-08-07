@@ -42,6 +42,7 @@ router.put('/:id', (req, res) => {
     // add query 
     let id = req.params.id;
     let date = Date.now();
+    console.log('id of put is: ', id);
     let sqlQuery = `
         UPDATE "task"
         SET "complete" = true, "date_completed" = to_timestamp(${date}/1000)

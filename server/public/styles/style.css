@@ -7,7 +7,7 @@ td {
     padding: 5px 10px;
 }
 
-tr.strikeout td:before {
+tr.strikeout td.strike-able:before {
     content: " ";
     position: absolute;
     top: 50%;
@@ -15,3 +15,11 @@ tr.strikeout td:before {
     border-bottom: 1px solid #111;
     width: 100%;
 }
+/* 
+NOTE: I had to look up the strike through styling. I got it from here: 
+https://stackoverflow.com/questions/4619542/linethrough-strikethrough-a-whole-html-table-row
+Who seems to have gotten it from here:
+https://codepen.io/nericksx/pen/CKjbe
+
+I don't totally understand it. 
+*/
