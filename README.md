@@ -27,10 +27,10 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     [x] client - set up listener that makes ajax call
     [x] server - pings data base to change this, also sets date completed and displays 
     [x] client - upon success change the visual representation (line thru?) add a class
-[] wire up the delete button
-    [] client - delete ajax call
-    [] server - delete db query
-    [] client - get list of tasks(i.e. redisplay)
+[x] wire up the delete button
+    [x] client - delete ajax call
+    [x] server - delete db query
+    [x] client - get list of tasks(i.e. redisplay)
 [x] server - Set up DB
     [x] Set up DB Connection
     [x] Import that into each routes file
