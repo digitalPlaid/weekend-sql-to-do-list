@@ -33,5 +33,33 @@ function createTask() {
 };
 
 function getTasks() {
+    // get tasks
+    let tasks = [];
+    $.ajax({
+        method: 'GET',
+        url: '/task'
+    }).then((response) => {
+        tasks = response // .body?
+        console.log(response);
+        console.log('successfully GET');
+    }).catch((error) => {
+        console.log('Failed to get: ', error);
+        alert('Failed to retrieve tasks. See console for error.')
+    })
+    // displaygit status
+    
+    displayTasks(tasks);
+}
 
+function displayTasks(tasks) {
+    let outputArea = $('#taskout');
+    outputArea.empty()
+    for (element of tasks) {
+        outputArea.append(`
+        <tr data-id="${element.id}" data-complete="${element.date_completed}">
+            <td>${element.task}</td>
+            <td>${element.date_completed}</td>
+        </tr>
+        `)
+    }
 }
