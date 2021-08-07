@@ -12,21 +12,51 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h1>Welcome to Task Tracker</h1>
     
-    <input type="text" id="taskInput" placeholder="task description">
-    <button id="createTaskBtn">Create</button>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" id="taskInput" aria-label="Recipient's username" aria-describedby="basic-addon2" placeholder="Task Description">
+        <div class="input-group-append">
+          <button class="btn btn-success" id="createTaskBtn">Task Description</button>
+        </div>
+    </div>
 
     <table>
         <thead>
             <th>Mark Complete</th>
             <th>Task</th>
-            <th>Date Completed</th>
-            <th>Delete</th>
+            <th>Date Finished</th>
+            <th></th>
         </thead>
         <tbody id="taskOut">
 
         </tbody>
     </table>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete this task?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-danger delete" data-dismiss="modal">DELETE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     <!-- bootstrap js cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

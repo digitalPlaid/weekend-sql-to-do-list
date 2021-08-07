@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         console.log('failed to get tasks from db');
         res.sendStatus(500);
     })
-})
+});
 
 // POST
 router.post('/', (req, res) => {
@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
         console.log('Error creating new task.')
         res.sendStatus(500);
     })
-})
+});
 
 // PUT
 router.put('/:id', (req, res) => {
@@ -55,16 +55,15 @@ router.put('/:id', (req, res) => {
         console.log('error putting data to db: ', error);
         res.sendStatus(500);
     })
-})
+});
 
 // DELETE
 router.delete('/:id', (req, res) => {
     console.log('in delete');
     let id = req.params.id;
     let sqlQuery = `
-    DELETE FROM "task"
-    WHERE "id" = $1
-        `;
+        DELETE FROM "task"
+        WHERE "id" = $1`;
     pool.query(sqlQuery, [id]).then((dbRes) => {
         console.log('delete succeeded');
         res.sendStatus(200);
@@ -72,7 +71,7 @@ router.delete('/:id', (req, res) => {
         console.log('delete from db failed: ', error);
         res.sendStatus(500);
     })
-})
+});
 
 
 
