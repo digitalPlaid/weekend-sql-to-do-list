@@ -32,13 +32,13 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     [] server - delete db query
     [] client - get list of tasks(i.e. redisplay)
 [] server - Set up DB
-    [] Set up DB Connection
+    [x] Set up DB Connection
     [] Import that into each routes file
-    [] postico - create a DB w/ name `weekend-to-do-app`
-        [] create table with following headings:
-            [] complete
-            [] task
-            [] date_completed
+    [x] postico - create a DB w/ name `weekend-to-do-app`
+        [x] create table with following headings:
+            [x] complete
+            [x] task
+            [x] date_completed
 [] client - styling
     [] change background color
     [] font family and size
