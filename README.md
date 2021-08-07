@@ -31,9 +31,9 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     [] client - delete ajax call
     [] server - delete db query
     [] client - get list of tasks(i.e. redisplay)
-[] server - Set up DB
+[x] server - Set up DB
     [x] Set up DB Connection
-    [] Import that into each routes file
+    [x] Import that into each routes file
     [x] postico - create a DB w/ name `weekend-to-do-app`
         [x] create table with following headings:
             [x] complete
