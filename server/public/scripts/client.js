@@ -24,7 +24,7 @@ function createTask() {
         data: {task}
     }).then((response) => {
         console.log('Successfully posted new task: ', response);
-        // getTasks();
+        getTasks();
     }).catch((error) => {
         console.log('Failed to post new task: ', error);
         alert('Failed to post new task. Check console for error.')
