@@ -52,7 +52,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
     [x] put title in jumbotron or something
 [x] client - confirm delete when deleting
     [x] see bootstrap docs per the instructions
-[] ordering task query
-    [] option to reverse the order tasks display in
-    [] see instructions for detail
+[x] ordering task query
+    [x] option to reverse the order tasks display in
+    [x] see instructions for detail
 [x] record when a task was completed

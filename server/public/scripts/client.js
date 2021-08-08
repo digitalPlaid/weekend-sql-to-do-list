@@ -24,7 +24,7 @@ function reverseQuery() {
     } else {
         order = 'ASC';
     };
-    // call get function with the ?order=reverse or whatever
+    // reload according to new order
     getTasks(order);
 }
 
@@ -63,10 +63,6 @@ function completeTask() {
         console.log('Failed to put data: ', error);
         alert('Failed to put. See console for details.')
     })
-        // if successful
-        // apply css class to change style
-        // add completion date ( do on client or server side? )
-
 };
 
 function createTask() {

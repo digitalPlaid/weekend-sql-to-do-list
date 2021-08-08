@@ -11,7 +11,8 @@ router.get('/', (req, res) => {
         injection = param;
     } else {
         injection = 'ASC'
-    }
+    };
+    // get it according to specified order
     let sqlQuery = `
         SELECT * FROM "task" ORDER BY "id" ${injection};
         `;
