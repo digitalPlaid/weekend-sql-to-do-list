@@ -15,7 +15,6 @@ tr.strikeout td.strike-able:before {
     left: 0;
     border-bottom: 1px solid #111;
     width: 100%;
-    color: yellow;
 }
 /* 
 NOTE: I had to look up the strike through styling. I got it from here: 
@@ -41,4 +40,10 @@ td, th {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+.green {
+    background-color: #A3FEBF;
+}
+.jumbotron {
+    padding-bottom: 10px;
 }
