@@ -9,9 +9,8 @@ app.use(express.static('server/public'));
 // tell app what router to use
 app.use('/task', taskRouter);
 // tell app which port to listen to
+const port = 5000;
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-    port = 8000;
-}
-app.listen(port);
+app.listen(port, () => {
+    console.log('listening on port: ', port)
+})
