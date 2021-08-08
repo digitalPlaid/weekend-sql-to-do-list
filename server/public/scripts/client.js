@@ -99,7 +99,8 @@ function displayTasks(tasks) {
         // decide what we'll inject into the html
         let completeBtn = element.complete ? '' : `<button class="complete btn btn-success">Complete</button>`;
         let strikeout = element.complete ? 'strikeout' : '';
-        let date = element.date_completed === null ? '' : element.date_completed;
+        let date = element.date_completed === null ? '' : element.date_completed.split('T')[0];
+        console.log(typeof date);
         // append the appropriate info
         outputArea.append(`
         <tr class="${strikeout}" data-id="${element.id}" data-complete="${element.date_completed}">
