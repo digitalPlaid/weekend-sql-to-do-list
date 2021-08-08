@@ -1,11 +1,12 @@
 $(document).ready(onReady);
 
 let id = 0;
+let order = 'ASC';
 function onReady() {
     // add event listeners
     addListeners();
     // display initial task list
-    getTasks();
+    getTasks(order);
 }
 
 function addListeners() {
@@ -13,7 +14,19 @@ function addListeners() {
     $('#taskOut').on('click', '.complete', completeTask);
     $('#taskOut').on('click', '.collectID', collectID);
     $(document).on('click','.delete', deleteTask);
+    $('#order').on('click', reverseQuery);
 };
+
+function reverseQuery() {
+    // if it's asc, switch to desc, and vice versa
+    if (order === 'ASC') {
+        order = 'DESC';
+    } else {
+        order = 'ASC';
+    };
+    // call get function with the ?order=reverse or whatever
+    getTasks(order);
+}
 
 function collectID() {
     id = $(this).closest('tr').data('id')
@@ -26,7 +39,7 @@ function deleteTask() {
         method: 'DELETE',
         url: `/task/${id}`
     }).then((response) => {
-        getTasks();
+        getTasks(order);
     }).catch((error) => {
         console.log('Delete request failed.', error);
         alert('Delete request failed. See console for details.');
@@ -45,7 +58,7 @@ function completeTask() {
         url: `/task/${id}`,
     }).then(response => {
         console.log('Successfully updated data.');
-        getTasks(); // redisplay so that the new date shows up.
+        getTasks(order); // redisplay so that the new date shows up.
     }).catch(error => {
         console.log('Failed to put data: ', error);
         alert('Failed to put. See console for details.')
@@ -68,7 +81,7 @@ function createTask() {
         data: {task}
     }).then((response) => {
         console.log('Successfully posted new task: ', response);
-        getTasks();
+        getTasks(order);
     }).catch((error) => {
         console.log('Failed to post new task: ', error);
         alert('Failed to post new task. Check console for error.')
@@ -76,11 +89,11 @@ function createTask() {
 
 };
 
-function getTasks() {
+function getTasks(order) {
     // get tasks
     $.ajax({
         method: 'GET',
-        url: '/task'
+        url: `/task/?order=${order}`
     }).then((response) => {
         console.log('successfully GET');
         displayTasks(response);
