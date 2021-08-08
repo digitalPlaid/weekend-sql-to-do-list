@@ -1,5 +1,6 @@
 table {
     border-collapse: collapse;
+    margin: 0 auto;
 }
 
 td {
@@ -23,3 +24,26 @@ https://codepen.io/nericksx/pen/CKjbe
 
 I don't totally understand it. 
 */
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #C8C8C8;
+}
+
+.input-group {
+    width: 60%;
+    margin: 0 auto;
+}
+
+td, th {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.green {
+    background-color: #A3FEBF;
+}
+.jumbotron {
+    padding-bottom: 10px;
+}
