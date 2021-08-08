@@ -40,8 +40,8 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
             [x] task
             [x] date_completed
 [] client - styling
-    [] change background color
-    [] font family and size
+    [x] change background color
+    [x] font family and size
     [] text color and/or background color of tasks to show completed vs not
     [] add bootstrap 
         [x] make creation buttons green
@@ -49,7 +49,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
         [x] make inputs in the bootstrap way
         [] make the page responsive to different layouts - bootstrap docs per the instructions (and make width of task input to be not 100%)
     [] make the table be static in its shape - it shouldn't change every time the task input changes
-    [] make presentation of dates prettier. just give the date w/ slashes or dashes
+    [x] make presentation of dates prettier. just give the date w/ slashes or dashes
     [] put title in jumbotron or something
 [x] client - confirm delete when deleting
     [x] see bootstrap docs per the instructions

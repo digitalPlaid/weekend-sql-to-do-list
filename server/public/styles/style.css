@@ -1,5 +1,6 @@
 table {
     border-collapse: collapse;
+    margin: 0 auto;
 }
 
 td {
@@ -14,6 +15,7 @@ tr.strikeout td.strike-able:before {
     left: 0;
     border-bottom: 1px solid #111;
     width: 100%;
+    color: yellow;
 }
 /* 
 NOTE: I had to look up the strike through styling. I got it from here: 
@@ -23,3 +25,20 @@ https://codepen.io/nericksx/pen/CKjbe
 
 I don't totally understand it. 
 */
+
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #C8C8C8;
+}
+
+.input-group {
+    width: 60%;
+    margin: 0 auto;
+}
+
+td, th {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
