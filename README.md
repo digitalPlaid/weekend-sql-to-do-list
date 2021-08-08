@@ -49,7 +49,7 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
         [x] make inputs in the bootstrap way
         [x] make the page responsive to different layouts - bootstrap docs per the instructions (and make width of task input to be not 100%)
     [x] make presentation of dates prettier. just give the date w/ slashes or dashes
-    [] put title in jumbotron or something
+    [x] put title in jumbotron or something
 [x] client - confirm delete when deleting
     [x] see bootstrap docs per the instructions
 [] ordering task query
