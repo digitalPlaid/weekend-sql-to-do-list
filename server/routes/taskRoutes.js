@@ -4,8 +4,16 @@ const router = new express.Router();
 
 // GET
 router.get('/', (req, res) => {
+    let param = req.query.order
+    let injection = '';
+    // validation
+    if (param === 'DESC') {
+        injection = param;
+    } else {
+        injection = 'ASC'
+    }
     let sqlQuery = `
-        SELECT * FROM "task" ORDER BY "id";
+        SELECT * FROM "task" ORDER BY "id" ${injection};
         `;
     pool.query(sqlQuery).then((dbResponse) => {
         console.log('successfully got tasks');
